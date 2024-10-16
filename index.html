@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- css -->
+     <link rel="stylesheet" href="./index.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- fontowsame -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
@@ -12,14 +14,59 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.13/dist/full.min.css" rel="stylesheet" type="text/css" />
     <!-- tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                clifford: '#da373d',
+              }
+            }
+          }
+        }
+      </script>
 </head>
 
 <body>
+    <header class="">
+<nav class="flex justify-between w-11/12 mx-auto pt-10">
+  <div>
+      <img src="./images/logo.webp" alt="">
+      Peddy
+  </div>
+  <div class="flex gap-10">
+    <div>Home</div>
+    <div>Shop</div>
+    <div>Contact</div>
+  </div>
+  <div>
+    <i class="fa-regular fa-user"></i>
+  </div>
+</nav>
+
+<div class=" flex flex-col justify-center items-center text-center ">
+  <h2 class="text-base mt-2">Bringing Families Together ❤️‍🔥</h2>
+  <h1 class="text-3xl font-extrabold my-4">Your Path to Adoption <br> Starts Here</h1>
+  <h4 class="text-xs mb-5">It is a long established fact that a reader will be distracted by the readable content of a page when looking <br> at its layout. The point of using Lorem Ipsum is that it has a.</h4>
+  <button class="btn btn-accent">View More</button>
+  <div class="">
+    <img src="./images/pet.webp" class="" alt="">
+  </div>
+  <h1 class="text-2xl font-bold mt-10">Adopt  Your  Best Friend</h1>
+  <h4 class="text-xs my-5">It is a long established fact that a reader will be distracted by the readable content of a <br> page when looking at its layout. The point of using Lorem Ipsum is that it has a.</h4>
+</div>
+<div class="gap-4 flex justify-center" id="categoriesNav"></div> 
+
+
+    </header>
 
     <main>
-        
-    </main>
+    
+  <section id="allPets" class="w-11/12 mx-auto grid grid-cols-1 lg:grid-cols-4 gap-4 py-10"></section>
+ 
+      </main>
 
+<script type="module" src="./index.js"></script>
 </body>
 
 </html>
