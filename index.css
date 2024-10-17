@@ -1,8 +1,14 @@
+.active {
+  background-color: red !important;
+  color: #fff !important;
+}
+
+
 .loader {
-    display: none;
     animation: rotate 1s infinite;
     height: 50px;
     width: 50px;
+    margin: 200px;
   }
 
   .loader:before,
@@ -61,3 +67,17 @@
     }
   }
   
+
+
+
+
+
+
+
+
+
+
+
+
+
+

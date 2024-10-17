@@ -61,12 +61,89 @@
     </header>
 
     <main>
-    
-  <section id="allPets" class="w-11/12 mx-auto grid grid-cols-1 lg:grid-cols-4 gap-4 py-10"></section>
+  <!-- spinerr -->
+
+<div class="flex flex-col justify-center items-center">
+  <div id="loader" class="loader"></div>
+</div>
  
+
+
+    <div id="removeSection" class="flex flex-row gap-4 lg:mx-20 py-10">
+      <div id="allPets" class="w-11/12 mx-auto grid grid-cols-1 lg:grid-cols-3 gap-4"></div>
+     
+      <div id="likebutton" class="border-gray-200 rounded-md  gap-2 border-2 flex-[33.33%] grid grid-cols-2"></div> 
+    </div>
+
+
+    
+    <!-- modal -->
+     <!-- Open the modal using ID.showModal() method -->
+<button class="btn hidden" onclick="my_modal_5.showModal()">open modal</button>
+<dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+  <div class="modal-box">
+    <div id="modal-content">
+
+    </div>
+    <div class="modal-action">
+      <form method="dialog">
+        <button class="btn">Close</button>
+      </form>
+    </div>
+  </div>
+</dialog>
+
+   <!-- modal -->
+     <!-- Open the modal using timer set method -->
+     <button class="btn hidden" onclick="mytime.showModal()">open modal</button>
+     <dialog id="mytime" class="modal modal-bottom sm:modal-middle">
+       <div class="modal-box">
+         <div id="modalContent">
+          <div onclick="reverseCountdown()"></div>
+     
+         </div>
+         <div class="modal-action">
+           <form method="dialog">
+             <button class="btn">Close</button>
+           </form>
+         </div>
+       </div>
+     </dialog>
+  
       </main>
 
-<script type="module" src="./index.js"></script>
+<script src="./index.js"></script>
 </body>
+
+<footer class="footer bg-base-300 text-base-content p-10">
+  <nav>
+    <h6 class="footer-title">Services</h6>
+    <a class="link link-hover">Branding</a>
+    <a class="link link-hover">Design</a>
+    <a class="link link-hover">Marketing</a>
+    <a class="link link-hover">Advertisement</a>
+  </nav>
+  <nav>
+    <h6 class="footer-title">Company</h6>
+    <a class="link link-hover">About us</a>
+    <a class="link link-hover">Contact</a>
+    <a class="link link-hover">Jobs</a>
+    <a class="link link-hover">Press kit</a>
+  </nav>
+  <nav>
+    <h6 class="footer-title">Social</h6>
+    <div class="grid grid-flow-col gap-4">
+      <a>
+       
+      </a>
+      <a>
+        
+      </a>
+      <a>
+       
+      </a>
+    </div>
+  </nav>
+</footer>
 
 </html>
