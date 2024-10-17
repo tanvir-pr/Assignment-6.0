@@ -1,4 +1,16 @@
 
+// sort order by price
+
+const sortingId = () => {
+    fetch("https://openapi.programming-hero.com/api/peddy/pets")
+        .then(response => response.json())
+        .then(data => {
+            const sortedData = data.pets.sort((a, b) => b.price - a.price);
+            addsinCategories(sortedData);
+        })
+        .catch(error => console.error("Error:", error));
+};
+
 // 1 fetch ,load and show catagories on html
 
 // create loadCategories
@@ -104,7 +116,7 @@ const seenDetsils = async(deatilsIdd) => {
     const res = await fetch(uri);
     const data = await res.json();
     displayDetailsIdSeen(data.petData)
-   
+    
 }
 
 const displayDetailsIdSeen = (petData) => {
@@ -146,25 +158,32 @@ const picShowBtn = (dat) => {
     console.log(dat);
     const picSet = document.getElementById("likebutton");
     const divContainer = document.createElement("div");
-    divContainer.innerHTML = `<div class="border-gray-200 rounded-md p-5 border-2"><img  src="${dat}" alt="" /></div>`;
+    divContainer.innerHTML = `<img class="border-gray-200 rounded-md p-5 border-2" src="${dat}" alt="" />`;
     picSet.appendChild(divContainer);
     
 
 }
 
 // modal e cutdwon dekhano
-const reverseCountdown = (hi) => {
-    let timeLeft = 4;
+const reverseCountdown = () => {
+    const timerCountdownId = document.getElementById("countTimerid");
+   const modalShowId =   document.getElementById("mytime");
+    let timeLeft = 3;
+    timerCountdownId.innerText = timeLeft
     const interval = setInterval(() => {
-      console.log(timeLeft); // Display the countdown number
-      timeLeft--;
-  
-      if (timeLeft < 0) {
+      console.log(timeLeft); // Display the countdown number                   
+        timeLeft--;
+        timerCountdownId.innerText = timeLeft
+        
+       
+        if (timeLeft <= 0) {
+            modalShowId.close();
         clearInterval(interval);
-        console.log("Countdown Complete!");
+        
+        
       }
     }, 1000); // Runs every 1 second
-    console.log(hi);
+   
   }
 
 
@@ -172,7 +191,8 @@ const reverseCountdown = (hi) => {
 const modalSetDwon = () => {
     console.log()
     const timeContainer = document.getElementById("modalContent");
-      document.getElementById("mytime").showModal();
+    document.getElementById("mytime").showModal();
+    reverseCountdown();
     timeContainer.innerHTML = `
     <div>
     <h1 class="text-center text-2xl font-bold">Congrates</h1>
@@ -207,15 +227,16 @@ const petsContainer = document.getElementById("allPets")
         // create a button
         const card = document.createElement("div");
         // card.classList = "cards";
+      
         card.innerHTML = `
  <div class="border-gray-200 rounded-md p-5 border-2	">
     <div><img class="rounded-md" src="${dat.image}" alt=""></div>
     <div class="">
-    <div class="text-xl "> ${dat.breed} </div>
+    <div class="text-xl "> ${dat.breed ? dat.breed : 'Not Available'} </div>
     <div class=""><i class="fa-solid fa-table-cells-large"></i></div>
-    <div class=""><i class="fa-solid fa-calendar-days"></i> Birth : ${dat.date_of_birth}</div>
-    <div class=""><i class="fa-solid fa-mercury"></i> Gender : ${dat.gender}</div>
-    <div class="pb-3"><i class="fa-solid fa-dollar-sign"></i> Price : ${dat.price}</div>
+    <div class=""><i class="fa-solid fa-calendar-days"></i> Birth : ${dat.date_of_birth ? dat.date_of_birth : 'Not Available'}</div>
+    <div class=""><i class="fa-solid fa-mercury"></i> Gender : ${dat.gender ? dat.gender : 'Not Available'}</div>
+    <div class="pb-3"><i class="fa-solid fa-dollar-sign"></i> Price : ${dat.price ? dat.price : 'Not Available' }</div>
     <hr class="pb-3" />
     </div>
     <div class="flex justify-evenly">

@@ -1,25 +1,7 @@
-const loadAllPhone = () => {
-console.log("wow 3 sec done");
-document.getElementById("spinner").style.display = "none";
-
-
-const rewponse = await fetch ('')
-const data  = await response.json();
-displayAllPhone(data.data)
+if (dat.length == 0) {
+ 
+  petsContainer.innerHTML = `
+ <h3>Not Available</h3>
+  `
 }
 
-displayAllPhone = (phones) => {
-  console.log(phones)
-}
-
-
-const handlesearch = () => {
-  document.getElementById("spinner").style.display = "block";
-
-  setTimeout(function () {
-         loadAllPhone ()
-  },3000)
-}
-
-
-loadAllPhone();
